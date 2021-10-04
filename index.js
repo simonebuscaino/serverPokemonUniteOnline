@@ -8,11 +8,12 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    user: "root",
-    host: "localhost",
-    password: "password",
-    database: "mydb",
+    host: "eu-cdbr-west-01.cleardb.com",
+    user: "b15c8bbfd41172",
+    password: "6032148d",
+    database: "heroku_630535a52066662",
 })
+
 
 app.post("/create", (req, res) => {
     const nome = req.body.nome;
@@ -20,7 +21,7 @@ app.post("/create", (req, res) => {
 
     // console.log(nome);
 
-    db.query('INSERT INTO testTable (nome, cognome) VALUES (?,?)', 
+    db.query('INSERT INTO provola (nome, cognome) VALUES (?,?)', 
     [nome, cognome],
     (err, result) => {
         if (err) {
