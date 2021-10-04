@@ -31,6 +31,6 @@ app.post("/create", (req, res) => {
     })
 })
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log("Ci sono");
 })
