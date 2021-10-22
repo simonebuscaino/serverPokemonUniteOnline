@@ -16,7 +16,7 @@ const db = mysql.createConnection({
 
 
 app.post("/create", (req, res) => {
-    const name = req.body.nome;
+    const name = req.body.name;
     const lobbyCode = req.body.lobbyCode;
     const typeOfAccess = req.body.typeOfAccess;
     const secretCode = req.body.secretCode;
