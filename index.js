@@ -16,13 +16,17 @@ const db = mysql.createConnection({
 
 
 app.post("/create", (req, res) => {
-    const nome = req.body.nome;
-    const cognome = req.body.cognome;
+    const name = req.body.nome;
+    const lobbyCode = req.body.lobbyCode;
+    const typeOfAccess = req.body.typeOfAccess;
+    const secretCode = req.body.secretCode;
+    const typeOfLobby = req.body.typeOfLobby;
+    const nPlayers = req.body.nPlayers;
 
     // console.log(nome);
 
-    db.query('INSERT INTO provola (nome, cognome) VALUES (?,?)', 
-    [nome, cognome],
+    db.query('INSERT INTO lobby (name, lobbyCode, typeOfAccess, secretCode, typeOfLobby, nPlayers) VALUES (?,?,?,?,?,?)', 
+    [name, lobbyCode, typeOfAccess, secretCode, typeOfLobby, nPlayers],
     (err, result) => {
         if (err) {
             console.log(err);
